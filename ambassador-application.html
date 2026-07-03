@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Terms & Conditions – Guwahati Marathon</title>
+<title>Become An Ambassador – Guwahati Marathon</title>
 <link rel="preconnect" href="https://youtu.be/LUa3sk33tt4?si=T9zKGyIdYhKf2OZE">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700&family=Barlow:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -1032,6 +1032,8 @@
 
     /* ── STATS BAR ── */
     .stats-bar { padding: 0 20px; }
+    .aims-banner-row { padding: 20px 12px !important; gap: 12px !important; flex-wrap: wrap; }
+    .aims-banner-text { font-size: 18px !important; line-height: 1.3 !important; overflow-wrap: break-word; }
     .stats-inner { grid-template-columns: repeat(2, 1fr); }
     .stat-item { padding: 20px 16px; gap: 12px; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); }
     .stat-item:nth-child(odd) { border-right: 1px solid rgba(255,255,255,0.08); }
@@ -1190,7 +1192,7 @@
 
 </style>
 </head><style>
-  /* ── LEGAL / SUPPORT PAGES ── */
+  /* ── FORM PAGES (reuses legal-hero pattern) ── */
   .legal-hero {
     position: relative;
     background: var(--navy-dark);
@@ -1222,162 +1224,133 @@
     text-transform: uppercase;
     letter-spacing: -0.5px;
   }
-  .legal-updated {
-    font-size: 13.5px; color: rgba(255,255,255,0.55);
-    margin-top: 14px;
+  .legal-hero p.legal-updated {
+    font-size: 15px; color: rgba(255,255,255,0.7);
+    margin-top: 14px; max-width: 560px; line-height: 1.7;
   }
 
-  .legal-body {
-    max-width: 820px;
+  .form-body {
+    max-width: 720px;
     margin: 0 auto;
     padding: 64px 24px 100px;
   }
 
-  /* Table of contents */
-  .legal-toc {
-    background: var(--light);
-    border: 1px solid rgba(44,44,101,0.08);
-    padding: 24px 28px;
-    margin-bottom: 56px;
-  }
-  .legal-toc-title {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 700; font-size: 13px; letter-spacing: 1.2px;
-    text-transform: uppercase; color: var(--navy);
-    margin-bottom: 14px;
-  }
-  .legal-toc ol {
-    columns: 2; column-gap: 32px;
-    list-style: none; counter-reset: toc;
-  }
-  .legal-toc li { margin-bottom: 8px; break-inside: avoid; }
-  .legal-toc a {
-    counter-increment: toc;
-    font-size: 13.5px; color: var(--gray); text-decoration: none;
-    display: flex; gap: 8px;
-  }
-  .legal-toc a::before {
-    content: counter(toc) ".";
-    color: var(--pink); font-weight: 700; flex-shrink: 0;
-  }
-  .legal-toc a:hover { color: var(--pink); }
-
-  /* Section blocks */
-  .legal-section { margin-bottom: 44px; scroll-margin-top: 90px; }
-  .legal-section h2 {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 800; font-size: 24px;
-    color: var(--navy); text-transform: uppercase;
-    letter-spacing: 0.3px; margin-bottom: 6px;
-    display: flex; align-items: baseline; gap: 10px;
-  }
-  .legal-section h2 .num { color: var(--pink); font-size: 20px; }
-  .legal-section-rule { width: 32px; height: 2px; background: var(--pink); margin-bottom: 18px; }
-  .legal-section h3 {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 700; font-size: 16.5px;
-    color: var(--navy); text-transform: uppercase;
-    letter-spacing: 0.3px; margin: 20px 0 8px;
-  }
-  .legal-section p {
-    font-size: 15px; line-height: 1.75; color: var(--gray);
-    margin-bottom: 14px;
-  }
-  .legal-section ul, .legal-section ol.legal-list {
-    margin: 0 0 14px 0; padding-left: 22px;
-  }
-  .legal-section li {
-    font-size: 15px; line-height: 1.75; color: var(--gray);
-    margin-bottom: 8px;
-  }
-  .legal-section strong { color: var(--navy); font-weight: 700; }
-  .legal-section a { color: var(--pink); font-weight: 600; text-decoration: none; }
-  .legal-section a:hover { text-decoration: underline; }
-
-  .legal-callout {
+  .form-intro-box {
     background: var(--light);
     border-left: 3px solid var(--pink);
-    padding: 18px 22px;
-    margin: 18px 0;
-    font-size: 14.5px; color: var(--navy); line-height: 1.7;
+    padding: 22px 26px;
+    margin-bottom: 44px;
+    font-size: 14.5px; color: var(--navy); line-height: 1.75;
   }
-  .legal-callout strong { color: var(--pink); }
-  .legal-callout.warn { border-left-color: #E0A200; background: #FFF9EC; }
-  .legal-callout.warn strong { color: #B87E00; }
+  .form-intro-box strong { color: var(--pink); }
 
-  .legal-table {
-    width: 100%; border-collapse: collapse; margin: 16px 0 24px;
-    font-size: 14px;
+  .info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 16px;
+    margin-bottom: 44px;
   }
-  .legal-table th {
-    background: var(--navy); color: white;
-    text-align: left; padding: 10px 14px;
+  .info-chip {
+    background: white;
+    border: 1px solid rgba(44,44,101,0.1);
+    padding: 16px 18px;
+  }
+  .info-chip .num {
     font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 700; letter-spacing: 0.4px; text-transform: uppercase;
-    font-size: 12.5px;
+    font-weight: 800; font-size: 22px; color: var(--pink);
+    line-height: 1;
   }
-  .legal-table td {
-    padding: 10px 14px; border-bottom: 1px solid rgba(44,44,101,0.08);
-    color: var(--gray); vertical-align: top;
+  .info-chip .lbl {
+    font-size: 12px; color: var(--gray); margin-top: 6px;
+    text-transform: uppercase; letter-spacing: 0.5px;
   }
-  .legal-table tr:last-child td { border-bottom: none; }
 
-  .legal-contact-box {
-    background: var(--navy-dark); color: white;
-    padding: 32px; margin-top: 48px;
-    display: flex; align-items: center; justify-content: space-between;
-    flex-wrap: wrap; gap: 16px;
-  }
-  .legal-contact-box h3 {
+  .gm-form { display: flex; flex-direction: column; gap: 20px; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .form-field { display: flex; flex-direction: column; gap: 7px; }
+  .form-field label {
     font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 800; font-size: 20px; text-transform: uppercase;
-    margin-bottom: 4px;
+    font-weight: 700; font-size: 13px; letter-spacing: 0.4px;
+    text-transform: uppercase; color: var(--navy);
   }
-  .legal-contact-box p { font-size: 14px; color: rgba(255,255,255,0.65); }
-  .legal-contact-box a {
+  .form-field label .opt { color: var(--gray); font-weight: 400; text-transform: none; font-size: 12px; }
+  .form-field input,
+  .form-field select,
+  .form-field textarea {
+    font-family: 'Inter', sans-serif;
+    font-size: 14.5px; color: var(--navy);
+    border: 1px solid rgba(44,44,101,0.18);
+    background: white;
+    padding: 13px 14px;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .form-field input:focus,
+  .form-field select:focus,
+  .form-field textarea:focus {
+    border-color: var(--pink);
+  }
+  .form-field textarea { resize: vertical; min-height: 110px; font-family: 'Inter', sans-serif; }
+  .form-field select { appearance: none; background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewBox="0 0 12 8"><path d="M1 1l5 5 5-5" stroke="%232C2C65" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>'); background-repeat: no-repeat; background-position: right 14px center; padding-right: 36px; }
+
+  .form-submit-btn {
+    background: var(--pink); color: white; border: none;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700; font-size: 15px; letter-spacing: 0.8px;
+    text-transform: uppercase;
+    padding: 16px 32px;
+    cursor: pointer;
+    display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+    transition: background 0.2s;
+    margin-top: 6px;
+  }
+  .form-submit-btn:hover { background: var(--pink-dark, #B8195F); }
+  .form-submit-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+  .form-note {
+    font-size: 13px; color: var(--gray); margin-top: 20px; line-height: 1.7;
+  }
+  .form-note a { color: var(--pink); font-weight: 600; text-decoration: none; }
+  .form-note a:hover { text-decoration: underline; }
+
+  .form-success {
+    display: none;
+    background: var(--light);
+    border-left: 3px solid var(--pink);
+    padding: 40px 32px;
+    text-align: center;
+  }
+  .form-success.show { display: block; }
+  .form-success .icon {
+    width: 52px; height: 52px; border-radius: 50%;
     background: var(--pink); color: white;
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 700; font-size: 13px; letter-spacing: 0.6px;
-    text-transform: uppercase; text-decoration: none;
-    padding: 13px 26px; white-space: nowrap;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 18px;
   }
+  .form-success .icon svg { width: 24px; height: 24px; stroke: white; fill: none; stroke-width: 2.5; }
+  .form-success h3 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800; font-size: 24px; color: var(--navy);
+    text-transform: uppercase; margin-bottom: 8px;
+  }
+  .form-success p { font-size: 14.5px; color: var(--gray); }
+  .form-error {
+    display: none;
+    background: #FFF3F3; border-left: 3px solid #D9455F;
+    padding: 14px 18px; font-size: 13.5px; color: #A62E44;
+    margin-top: -4px;
+  }
+  .form-error.show { display: block; }
 
-  /* FAQ accordion */
-  .faq-cat { margin-bottom: 48px; }
-  .faq-cat-title {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 800; font-size: 22px; color: var(--navy);
-    text-transform: uppercase; letter-spacing: 0.3px;
-    margin-bottom: 4px;
-  }
-  .faq-item {
-    border-bottom: 1px solid rgba(44,44,101,0.1);
-  }
-  .faq-item summary {
-    padding: 18px 4px; cursor: pointer;
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 700; font-size: 16px; color: var(--navy);
-    list-style: none; display: flex; align-items: center;
-    justify-content: space-between; gap: 12px;
-  }
-  .faq-item summary::-webkit-details-marker { display: none; }
-  .faq-item summary::after {
-    content: "+"; color: var(--pink); font-size: 22px; font-weight: 400;
-    flex-shrink: 0; transition: transform 0.2s;
-  }
-  .faq-item[open] summary::after { transform: rotate(45deg); }
-  .faq-item p {
-    padding: 0 4px 20px; font-size: 14.5px; color: var(--gray); line-height: 1.75;
-  }
+  /* honeypot field must stay hidden */
+  .hp-field { position: absolute; left: -9999px; top: -9999px; }
 
   @media (max-width: 900px) {
     .legal-hero { padding: 108px 24px 48px; }
-    .legal-body { padding: 48px 20px 72px; }
-    .legal-toc ol { columns: 1; }
-    .legal-contact-box { flex-direction: column; align-items: flex-start; }
+    .form-body { padding: 48px 20px 72px; }
+    .form-row { grid-template-columns: 1fr; }
   }
 </style>
-
 <body>
 
 <!-- NAV -->
@@ -1427,175 +1400,54 @@
 <!-- HERO -->
 <div class="legal-hero">
   <div class="legal-hero-inner">
-    <p class="legal-eyebrow">Support · Legal</p>
-    <h1>Terms &amp; Conditions</h1>
-    <p class="legal-updated">Effective 3rd July 2026 · Governing the Guwahati Marathon 2026 (3rd Edition)</p>
+    <p class="legal-eyebrow">Get Involved</p>
+    <h1>Become An Ambassador</h1>
+    <p class="legal-updated">Help inspire the next generation of runners across Assam. Applications for the 3rd Edition Ambassador Programme are now open.</p>
   </div>
 </div>
 
-<div class="legal-body">
+<div class="form-body">
 
-  <div class="legal-toc">
-    <p class="legal-toc-title">On This Page</p>
-    <ol>
-      <li><a href="#intro">Introduction &amp; Acceptance</a></li>
-      <li><a href="#organizer">Organizer Details</a></li>
-      <li><a href="#eligibility">Eligibility &amp; Age Limits</a></li>
-      <li><a href="#registration">Registration &amp; Payment</a></li>
-      <li><a href="#category">Category Change Policy</a></li>
-      <li><a href="#transfer">Transfer of Registration</a></li>
-      <li><a href="#refunds">Cancellation &amp; Refund Policy</a></li>
-      <li><a href="#postponement">Postponement or Cancellation of Event</a></li>
-      <li><a href="#conduct">Participant Conduct &amp; Race Rules</a></li>
-      <li><a href="#health">Health &amp; Fitness Declaration</a></li>
-      <li><a href="#liability">Assumption of Risk &amp; Liability</a></li>
-      <li><a href="#media">Media &amp; Publicity Consent</a></li>
-      <li><a href="#ip">Intellectual Property</a></li>
-      <li><a href="#force">Force Majeure</a></li>
-      <li><a href="#law">Governing Law &amp; Jurisdiction</a></li>
-      <li><a href="#amend">Amendments</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ol>
+  <div class="form-intro-box">
+    <strong>What it means to be a GM Ambassador:</strong> representing the Guwahati Marathon in your community, inspiring others to run, and being part of the city's biggest running movement. Fill out the form below and our team will be in touch.
   </div>
 
-  <div class="legal-section" id="intro">
-    <h2><span class="num">01</span> Introduction &amp; Acceptance</h2>
-    <div class="legal-section-rule"></div>
-    <p>These Terms &amp; Conditions ("Terms") govern participation in the Guwahati Marathon 2026, 3rd Edition (the "Event"), organized by Paper Mache Pvt Ltd (the "Organizer"). By registering for the Event, you ("Participant") confirm that you have read, understood, and agree to be bound by these Terms in full. If you do not agree with these Terms, please do not proceed with registration.</p>
-  </div>
+  <form class="gm-form" name="ambassador-application" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="return handleGMForm(event, 'ambassador')">
+    <input type="hidden" name="form-name" value="ambassador-application">
+    <p class="hp-field"><label>Don't fill this out: <input name="bot-field"></label></p>
 
-  <div class="legal-section" id="organizer">
-    <h2><span class="num">02</span> Organizer Details</h2>
-    <div class="legal-section-rule"></div>
-    <p>The Guwahati Marathon is organized and managed by <strong>Paper Mache Pvt Ltd</strong> ("Organizer", "we", "us", "our"). All references to "the Event" in these Terms refer to the Guwahati Marathon 2026, taking place on 29th November 2026 in Guwahati, Assam.</p>
-  </div>
-
-  <div class="legal-section" id="eligibility">
-    <h2><span class="num">03</span> Eligibility &amp; Age Limits</h2>
-    <div class="legal-section-rule"></div>
-    <table class="legal-table">
-      <tr><th>Category</th><th>Minimum Age (as on event date)</th></tr>
-      <tr><td>Full Marathon</td><td>18 years</td></tr>
-      <tr><td>Half Marathon</td><td>18 years</td></tr>
-      <tr><td>10K City Run</td><td>12 years (with guardian consent if under 18)</td></tr>
-      <tr><td>5K Joy Run &amp; Walk</td><td>No age restriction</td></tr>
-    </table>
-    <p>The Organizer reserves the right to verify age and identity at bib collection and to deny participation where eligibility criteria are not met.</p>
-  </div>
-
-  <div class="legal-section" id="registration">
-    <h2><span class="num">04</span> Registration &amp; Payment</h2>
-    <div class="legal-section-rule"></div>
-    <p>Registration is confirmed only upon successful payment of the applicable entry fee. Participants must provide accurate and complete information at the time of registration, including name, contact details, date of birth, and emergency contact information. Providing false information may result in disqualification without refund.</p>
-  </div>
-
-  <div class="legal-section" id="category">
-    <h2><span class="num">05</span> Category Change Policy</h2>
-    <div class="legal-section-rule"></div>
-    <div class="legal-callout warn">
-      <strong>Category changes will not be accepted</strong> under any circumstances once a registration is confirmed. Please select your race category carefully before completing payment.
+    <div class="form-row">
+      <div class="form-field">
+        <label for="a-name">Full Name</label>
+        <input type="text" id="a-name" name="Full Name" required>
+      </div>
+      <div class="form-field">
+        <label for="a-phone">Phone Number</label>
+        <input type="tel" id="a-phone" name="Phone" required>
+      </div>
     </div>
-  </div>
 
-  <div class="legal-section" id="transfer">
-    <h2><span class="num">06</span> Transfer of Registration</h2>
-    <div class="legal-section-rule"></div>
-    <p>A confirmed registration may be transferred to another individual, subject to the following conditions:</p>
-    <ul>
-      <li>Transfer requests must be made <strong>up to 30 days prior to the event date</strong> (i.e. on or before 30th October 2026)</li>
-      <li>Requests must be submitted in writing to <a href="mailto:info@papermache.co.in">info@papermache.co.in</a> with details of both the original and new participant</li>
-      <li>The new participant must independently meet all eligibility and age requirements for the registered category</li>
-      <li>Category changes are not permitted as part of a transfer — the transferred registration remains in its original category</li>
-      <li>Transfer requests made within 30 days of the event date will not be accepted</li>
-    </ul>
-  </div>
-
-  <div class="legal-section" id="refunds">
-    <h2><span class="num">07</span> Cancellation &amp; Refund Policy</h2>
-    <div class="legal-section-rule"></div>
-    <p>Registration fees are <strong>non-refundable under normal circumstances</strong>, including but not limited to participant withdrawal, inability to attend, illness, travel disruption, or any other personal reason.</p>
-    <p>A refund will be issued only in the following circumstance:</p>
-    <ul>
-      <li>If the Organizer changes the event date due to unforeseen circumstances beyond its reasonable control</li>
-    </ul>
-    <p>Where a refund is applicable, the Organizer will communicate the refund process and timeline directly to affected participants via the contact details provided at registration.</p>
-  </div>
-
-  <div class="legal-section" id="postponement">
-    <h2><span class="num">08</span> Postponement or Cancellation of Event</h2>
-    <div class="legal-section-rule"></div>
-    <p>The Organizer reserves the right to postpone, reschedule, shorten, or cancel the Event, or any category within it, due to circumstances beyond its reasonable control, including but not limited to adverse weather, public safety concerns, government directives, or force majeure events. In such cases, the Organizer will make reasonable efforts to notify participants in advance through the contact information provided at registration and via official Guwahati Marathon communication channels.</p>
-  </div>
-
-  <div class="legal-section" id="conduct">
-    <h2><span class="num">09</span> Participant Conduct &amp; Race Rules</h2>
-    <div class="legal-section-rule"></div>
-    <ul>
-      <li>Participants must wear their official race bib visibly at all times during the Event</li>
-      <li>Bibs are non-transferable on race day and must match the registered participant</li>
-      <li>Participants must follow the designated race route and the instructions of race marshals, volunteers, and officials</li>
-      <li>Use of unauthorized transport or shortcuts on the course is strictly prohibited and will result in disqualification</li>
-      <li>Any form of abusive, unsafe, or disruptive conduct toward other participants, volunteers, or staff may result in removal from the Event without refund</li>
-      <li>Participants running the Full Marathon and Half Marathon may be subject to designated cut-off times, to be announced closer to the event</li>
-    </ul>
-  </div>
-
-  <div class="legal-section" id="health">
-    <h2><span class="num">10</span> Health &amp; Fitness Declaration</h2>
-    <div class="legal-section-rule"></div>
-    <p>By registering, the Participant confirms that they are physically fit and medically able to participate in the selected race category, and that they have disclosed any relevant medical conditions at the time of registration. Participants are strongly encouraged to review the Organizer's <a href="medical-advisory.html">Medical Advisory</a> before registering and again before race day.</p>
-  </div>
-
-  <div class="legal-section" id="liability">
-    <h2><span class="num">11</span> Assumption of Risk &amp; Liability</h2>
-    <div class="legal-section-rule"></div>
-    <p>Participation in a long-distance running event carries inherent physical risk. By registering, the Participant voluntarily assumes all risks associated with participation, including but not limited to injury, illness, or, in rare cases, death, whether caused by the negligence of the Organizer or otherwise, to the fullest extent permitted by applicable law.</p>
-    <p>The Organizer, its partners, sponsors, and affiliates shall not be held liable for any loss, injury, or damage sustained by a Participant before, during, or after the Event, except where such loss, injury, or damage arises directly from the gross negligence or willful misconduct of the Organizer.</p>
-  </div>
-
-  <div class="legal-section" id="media">
-    <h2><span class="num">12</span> Media &amp; Publicity Consent</h2>
-    <div class="legal-section-rule"></div>
-    <p>By participating in the Event, the Participant grants the Organizer the right to capture, use, and publish photographs, videos, and race results featuring the Participant, without compensation, for promotional, editorial, and marketing purposes related to the Guwahati Marathon, across print, digital, and social media channels.</p>
-  </div>
-
-  <div class="legal-section" id="ip">
-    <h2><span class="num">13</span> Intellectual Property</h2>
-    <div class="legal-section-rule"></div>
-    <p>All branding, logos, race bib designs, finisher medals, and other creative assets associated with the Guwahati Marathon are the intellectual property of the Organizer, Paper Mache Pvt Ltd, and may not be reproduced, copied, or used for commercial purposes without prior written consent.</p>
-  </div>
-
-  <div class="legal-section" id="force">
-    <h2><span class="num">14</span> Force Majeure</h2>
-    <div class="legal-section-rule"></div>
-    <p>The Organizer shall not be held responsible for any failure or delay in performance arising from causes beyond its reasonable control, including but not limited to natural disasters, extreme weather, epidemics or pandemics, government restrictions, civil unrest, or other events of force majeure.</p>
-  </div>
-
-  <div class="legal-section" id="law">
-    <h2><span class="num">15</span> Governing Law &amp; Jurisdiction</h2>
-    <div class="legal-section-rule"></div>
-    <p>These Terms shall be governed by and construed in accordance with the laws of India. Any disputes arising out of or in connection with these Terms or the Event shall be subject to the exclusive jurisdiction of the courts of <strong>Guwahati, Assam</strong>.</p>
-  </div>
-
-  <div class="legal-section" id="amend">
-    <h2><span class="num">16</span> Amendments</h2>
-    <div class="legal-section-rule"></div>
-    <p>The Organizer reserves the right to amend these Terms at any time. Material changes will be reflected on this page with an updated effective date. Continued participation in the Event following any changes constitutes acceptance of the revised Terms.</p>
-  </div>
-
-  <div class="legal-section" id="contact">
-    <h2><span class="num">17</span> Contact</h2>
-    <div class="legal-section-rule"></div>
-    <p>For any questions regarding these Terms &amp; Conditions, please contact us at <a href="mailto:info@papermache.co.in">info@papermache.co.in</a>.</p>
-  </div>
-
-  <div class="legal-contact-box">
-    <div>
-      <h3>Questions about these Terms?</h3>
-      <p>We're happy to clarify anything before you register.</p>
+    <div class="form-field">
+      <label for="a-email">Email Address</label>
+      <input type="email" id="a-email" name="Email" required>
     </div>
-    <a href="mailto:info@papermache.co.in">Email Us</a>
+
+    <div class="form-field">
+      <label for="a-story">Your Story</label>
+      <textarea id="a-story" name="Your Story" required placeholder="Tell us about your running journey and why you'd like to be a Guwahati Marathon Ambassador."></textarea>
+    </div>
+
+    <div class="form-error"></div>
+    <button type="submit" class="form-submit-btn">Submit Application</button>
+  </form>
+
+  <div id="ambassador-success" class="form-success">
+    <div class="icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+    <h3>Thanks for applying!</h3>
+    <p>We've received your application. Our team will reach out if you're shortlisted for the Ambassador Programme.</p>
   </div>
+
+  <p class="form-note">Prefer email? Write to us directly at <a href="mailto:info@papermache.co.in">info@papermache.co.in</a></p>
 
 </div>
 
@@ -1708,6 +1560,46 @@
   });
 })();
 </script>
+<script>
+(function(){
+  window.handleGMForm = function(e, formName){
+    e.preventDefault();
+    var form = e.target;
+    var btn = form.querySelector('button[type="submit"]');
+    var errorBox = form.querySelector('.form-error');
+    var originalText = btn.textContent;
+    btn.disabled = true;
+    btn.textContent = 'Submitting...';
+    if (errorBox) errorBox.classList.remove('show');
+
+    var formData = new FormData(form);
+    var params = new URLSearchParams();
+    formData.forEach(function(value, key){ params.append(key, value); });
+
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: params.toString()
+    })
+    .then(function(response){
+      if (!response.ok) { throw new Error('Submission failed with status ' + response.status); }
+      form.style.display = 'none';
+      var success = document.getElementById(formName + '-success');
+      if (success) success.classList.add('show');
+    })
+    .catch(function(){
+      if (errorBox) {
+        errorBox.textContent = "Something went wrong submitting the form. Please try again, or email us directly.";
+        errorBox.classList.add('show');
+      }
+      btn.disabled = false;
+      btn.textContent = originalText;
+    });
+
+    return false;
+  };
+})();
+</script>
 <!-- REGISTER MODAL -->
 <link rel="stylesheet" href="https://www.townscript.com/static/Bookingflow/css/ts-iframe.style.css">
 <div id="gmRegisterOverlay" style="display:none; position:fixed; inset:0; background:rgba(26,26,74,0.75); z-index:9998; align-items:center; justify-content:center; padding:20px;">
@@ -1729,6 +1621,7 @@ function closeGMRegisterModal(){
 document.addEventListener('keydown', function(e){ if(e.key === 'Escape'){ closeGMRegisterModal(); } });
 document.getElementById('gmRegisterOverlay') && document.getElementById('gmRegisterOverlay').addEventListener('click', function(e){ if(e.target === this){ closeGMRegisterModal(); } });
 </script>
+
 
 </body>
 </html>
