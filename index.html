@@ -1965,25 +1965,12 @@
 })();
 </script>
 <!-- REGISTER MODAL -->
-<link rel="stylesheet" href="https://www.townscript.com/static/Bookingflow/css/ts-iframe.style.css">
-<div id="gmRegisterOverlay" style="display:none; position:fixed; inset:0; background:rgba(26,26,74,0.75); z-index:9998; align-items:center; justify-content:center; padding:20px;">
-  <div style="position:relative; width:100%; max-width:720px; max-height:90vh; background:white; border-radius:4px; overflow:hidden; display:flex; flex-direction:column;">
-    <button onclick="closeGMRegisterModal()" aria-label="Close" style="position:absolute; top:8px; right:12px; z-index:2; background:#1A1A4A; color:white; border:none; width:34px; height:34px; border-radius:50%; font-size:20px; line-height:1; cursor:pointer;">&times;</button>
-    <iframe id="ts-iframe" src="https://www.townscript.com/v2/widget/guwahati-marathon-2026-024230/booking" frameborder="0" style="width:100%; height:80vh; border:none;"></iframe>
-  </div>
-</div>
+
 <script>
 function openGMRegisterModal(){
-  var ov = document.getElementById('gmRegisterOverlay');
-  if(ov){ ov.style.display = 'flex'; document.body.style.overflow = 'hidden'; }
+  window.open("https://www.district.in/events/guwahati-marathon-nov28-2026/buy-page/shows/6aa11a7ecab772a145e44232/Tickets?disableSSR=true", "_blank");
   return false;
 }
-function closeGMRegisterModal(){
-  var ov = document.getElementById('gmRegisterOverlay');
-  if(ov){ ov.style.display = 'none'; document.body.style.overflow = ''; }
-}
-document.addEventListener('keydown', function(e){ if(e.key === 'Escape'){ closeGMRegisterModal(); } });
-document.getElementById('gmRegisterOverlay') && document.getElementById('gmRegisterOverlay').addEventListener('click', function(e){ if(e.target === this){ closeGMRegisterModal(); } });
 </script>
 
 </body>
