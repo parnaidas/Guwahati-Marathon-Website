@@ -1346,6 +1346,51 @@
   .rd-stats .num { font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 28px; color: var(--navy); line-height: 1; }
   .rd-stats .lbl { font-size: 11.5px; letter-spacing: 1px; text-transform: uppercase; color: var(--gray); margin-top: 4px; }
 
+
+  /* Race category eligibility table */
+  .rc-block { margin-top: 64px; }
+  .rc-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .rc-table { width: 100%; min-width: 640px; border-collapse: collapse; table-layout: fixed; }
+  .rc-table th, .rc-table td { padding: 18px 20px; text-align: center; border-bottom: 1px solid var(--light-gray); }
+  .rc-table thead th {
+    color: white; vertical-align: bottom; border-bottom: 0;
+    font-family: 'Barlow Condensed', sans-serif; font-weight: 800;
+    font-size: 19px; text-transform: uppercase; letter-spacing: 0.5px; line-height: 1.1;
+  }
+  .rc-table thead th span {
+    display: block; margin-top: 4px;
+    font-size: 12px; font-weight: 600; letter-spacing: 1px; opacity: 0.75;
+  }
+  .rc-table thead th.rc-corner { background: var(--navy-dark); text-align: left; }
+  .rc-fm { background: var(--pink); }
+  .rc-hm { background: var(--navy); }
+  .rc-10k { background: #4E2D8C; }
+  .rc-5k { background: #1E7A4B; }
+  .rc-table tbody th {
+    text-align: left; background: var(--off-white); color: var(--navy);
+    font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+    font-size: 19px; text-transform: uppercase; letter-spacing: 0.5px;
+  }
+  .rc-age {
+    display: inline-block; min-width: 56px; padding: 4px 12px;
+    color: white; font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700; font-size: 17px;
+  }
+  .rc-dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; }
+  .rc-joy {
+    background: #EEF6F1; color: #1E7A4B;
+    font-size: 14.5px; line-height: 1.6; vertical-align: middle;
+  }
+  .rc-joy strong {
+    display: block; font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800; font-size: 20px; text-transform: uppercase;
+  }
+  .rc-rules {
+    margin-top: 20px; color: var(--gray);
+    font-size: 14.5px; line-height: 1.7; padding-left: 18px;
+  }
+  .rc-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+
   @media (max-width: 900px) {
     .gm-hero { padding: 108px 20px 48px; }
     .gm-section { padding: 48px 20px; }
@@ -1456,6 +1501,66 @@
         <a href="#prize-details" class="category-link">LEARN MORE <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
       </div>
     </div>
+  </div>
+
+  <!-- RACE CATEGORIES TABLE -->
+  <div class="rc-block" id="race-categories">
+    <p class="section-eyebrow">Eligibility</p>
+    <h2 class="section-title">Race Categories</h2>
+    <div class="section-rule"></div>
+
+    <div class="rc-scroll" role="region" aria-label="Race categories by age" tabindex="0">
+      <table class="rc-table">
+        <thead>
+          <tr>
+            <th class="rc-corner" scope="col">Category</th>
+            <th class="rc-fm" scope="col">Marathon<span>42.195 KM</span></th>
+            <th class="rc-hm" scope="col">Half Marathon<span>21.097 KM</span></th>
+            <th class="rc-10k" scope="col">10K City Run<span>10 KM</span></th>
+            <th class="rc-5k" scope="col">5K Joy Run &amp; Walk<span>5 KM</span></th>
+          </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <th scope="row">Open</th>
+          <td><span class="rc-age rc-fm">18+</span></td>
+          <td><span class="rc-age rc-hm">18+</span></td>
+          <td><span class="rc-age rc-10k">12+</span></td>
+          <td class="rc-joy" rowspan="5"><strong>All ages</strong>Non-competitive.<br>No age categories.</td>
+        </tr>
+        <tr>
+          <th scope="row">30–39</th>
+          <td><span class="rc-dot rc-fm"></span><span class="rc-sr">Eligible</span></td>
+          <td><span class="rc-dot rc-hm"></span><span class="rc-sr">Eligible</span></td>
+          <td><span class="rc-dot rc-10k"></span><span class="rc-sr">Eligible</span></td>
+        </tr>
+        <tr>
+          <th scope="row">40–49</th>
+          <td><span class="rc-dot rc-fm"></span><span class="rc-sr">Eligible</span></td>
+          <td><span class="rc-dot rc-hm"></span><span class="rc-sr">Eligible</span></td>
+          <td><span class="rc-dot rc-10k"></span><span class="rc-sr">Eligible</span></td>
+        </tr>
+        <tr>
+          <th scope="row">50–59</th>
+          <td><span class="rc-dot rc-fm"></span><span class="rc-sr">Eligible</span></td>
+          <td><span class="rc-dot rc-hm"></span><span class="rc-sr">Eligible</span></td>
+          <td><span class="rc-dot rc-10k"></span><span class="rc-sr">Eligible</span></td>
+        </tr>
+        <tr>
+          <th scope="row">60+</th>
+          <td><span class="rc-dot rc-fm"></span><span class="rc-sr">Eligible</span></td>
+          <td><span class="rc-dot rc-hm"></span><span class="rc-sr">Eligible</span></td>
+          <td><span class="rc-dot rc-10k"></span><span class="rc-sr">Eligible</span></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <ul class="rc-rules">
+      <li>Age is calculated as on race day, 29 November 2026.</li>
+      <li>Male and female categories are awarded separately, top 3 in each category.</li>
+      <li>Open includes all eligible ages. Open podium finishers are not eligible for age-category awards.</li>
+    </ul>
   </div>
 
   <div class="prize-note" id="prize-details">Prize Money Details will be updated soon.</div>
