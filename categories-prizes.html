@@ -1188,6 +1188,28 @@
     }
   }
 
+
+  /* Prize money */
+  .pz-intro{max-width:760px;margin:-8px 0 32px;font-size:15.5px;line-height:1.7;color:var(--gray);}
+  .pz-intro strong{color:var(--navy);}
+  .pz-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;align-items:start;}
+  .pz-card{background:#fff;border:1px solid var(--light-gray);border-top:5px solid var(--c);box-shadow:0 10px 30px rgba(44,44,101,.08);}
+  .pz-head{padding:22px 22px 14px;}
+  .pz-head span{display:block;font-size:11px;letter-spacing:2.5px;font-weight:700;text-transform:uppercase;color:var(--c);}
+  .pz-head h3{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:30px;text-transform:uppercase;color:var(--navy);margin:4px 0 0;line-height:1;}
+  .pz-table{width:100%;border-collapse:collapse;}
+  .pz-table th,.pz-table td{padding:11px 8px;text-align:right;font-size:14.5px;border-top:1px solid var(--light-gray);color:var(--navy);}
+  .pz-table thead th{font-size:10.5px;letter-spacing:1.8px;text-transform:uppercase;color:var(--gray);background:var(--off-white);border-top:0;}
+  .pz-table th:first-child{text-align:left;padding-left:18px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:17px;white-space:nowrap;}
+  .pz-table td:last-child{padding-right:18px;}
+  .pz-table .pz-fast th,.pz-table .pz-fast td{background:rgba(44,44,101,.05);font-weight:700;}
+  .pz-table td.pz-gift{text-align:center;color:var(--gray);font-style:italic;}
+  .pz-total{display:flex;justify-content:space-between;align-items:center;padding:14px 22px;background:var(--navy);color:#fff;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;}
+  .pz-total b{font-family:'Barlow Condensed',sans-serif;font-size:22px;letter-spacing:.5px;}
+  .pz-total-all{background:var(--c);}
+  .pz-joy{margin-top:24px;padding:18px 24px;border-left:3px solid var(--pink);background:var(--off-white);color:var(--navy);font-size:15px;}
+  @media(max-width:1100px){.pz-grid{grid-template-columns:1fr;max-width:560px;}}
+  @media(max-width:560px){.pz-table th,.pz-table td{padding:10px 8px;font-size:13.5px;}.pz-table th:first-child{padding-left:14px;font-size:16px;}.pz-table td:last-child{padding-right:14px;}.pz-head,.pz-total{padding-left:14px;padding-right:14px;}}
 </style>
 </head><style>
   /* ── GM 2026 SUBPAGES ── */
@@ -1450,7 +1472,7 @@
   <div class="gm-hero-inner">
     <p class="gm-eyebrow">GM 2026 · 3rd Edition</p>
     <h1>Categories <span>&amp; Prizes</span></h1>
-    <p class="gm-hero-desc">Four distances, one city-wide celebration. Pick your race and join thousands of runners on race day.</p>
+    <p class="gm-hero-desc">Four distances, one city-wide celebration. Pick your race, find your age category and see what is on the podium.</p>
   </div>
 </div>
 
@@ -1503,92 +1525,49 @@
     </div>
   </div>
 
-  <!-- RACE CATEGORIES TABLE -->
+  <!-- AGE CATEGORIES & PRIZE MONEY -->
   <div class="rc-block" id="race-categories">
-    <p class="section-eyebrow">Eligibility</p>
-    <h2 class="section-title">Race Categories</h2>
+    <p class="section-eyebrow">Age Categories &amp; Prize Money</p>
+    <h2 class="section-title">Prizes For Every Podium</h2>
     <div class="section-rule"></div>
-
-    <div class="rc-scroll" role="region" aria-label="Race categories by age" tabindex="0">
-      <table class="rc-table">
-        <thead>
-          <tr>
-            <th class="rc-corner" scope="col">Category</th>
-            <th class="rc-fm" scope="col">Marathon<span>42.195 KM</span></th>
-            <th class="rc-hm" scope="col">Half Marathon<span>21.097 KM</span></th>
-            <th class="rc-10k" scope="col">10K City Run<span>10 KM</span></th>
-            <th class="rc-5k" scope="col">5K Joy Run &amp; Walk<span>5 KM</span></th>
-          </tr>
-        </thead>
-        <tbody>
-        <tr>
-          <th scope="row">Open</th>
-          <td><span class="rc-age rc-fm">18+</span></td>
-          <td><span class="rc-age rc-hm">18+</span></td>
-          <td><span class="rc-age rc-10k">12+</span></td>
-          <td class="rc-joy" rowspan="9"><strong>All ages</strong>Non-competitive.<br>No age categories.</td>
-        </tr>
-        <tr>
-          <th scope="row">18–39</th>
-          <td><span class="rc-dot rc-fm"></span><span class="rc-sr">Eligible</span></td>
-          <td><span class="rc-dot rc-hm"></span><span class="rc-sr">Eligible</span></td>
-          <td><span class="rc-dot rc-10k"></span><span class="rc-sr">Eligible</span></td>
-        </tr>
-        <tr>
-          <th scope="row">40–44</th>
-          <td><span class="rc-dot rc-fm"></span><span class="rc-sr">Eligible</span></td>
-          <td><span class="rc-dot rc-hm"></span><span class="rc-sr">Eligible</span></td>
-          <td><span class="rc-dot rc-10k"></span><span class="rc-sr">Eligible</span></td>
-        </tr>
-        <tr>
-          <th scope="row">45–49</th>
-          <td><span class="rc-dot rc-fm"></span><span class="rc-sr">Eligible</span></td>
-          <td><span class="rc-dot rc-hm"></span><span class="rc-sr">Eligible</span></td>
-          <td><span class="rc-dot rc-10k"></span><span class="rc-sr">Eligible</span></td>
-        </tr>
-        <tr>
-          <th scope="row">50–54</th>
-          <td><span class="rc-dot rc-fm"></span><span class="rc-sr">Eligible</span></td>
-          <td><span class="rc-dot rc-hm"></span><span class="rc-sr">Eligible</span></td>
-          <td><span class="rc-dot rc-10k"></span><span class="rc-sr">Eligible</span></td>
-        </tr>
-        <tr>
-          <th scope="row">55–59</th>
-          <td><span class="rc-dot rc-fm"></span><span class="rc-sr">Eligible</span></td>
-          <td><span class="rc-dot rc-hm"></span><span class="rc-sr">Eligible</span></td>
-          <td><span class="rc-dot rc-10k"></span><span class="rc-sr">Eligible</span></td>
-        </tr>
-        <tr>
-          <th scope="row">60–64</th>
-          <td><span class="rc-dot rc-fm"></span><span class="rc-sr">Eligible</span></td>
-          <td><span class="rc-dot rc-hm"></span><span class="rc-sr">Eligible</span></td>
-          <td><span class="rc-dot rc-10k"></span><span class="rc-sr">Eligible</span></td>
-        </tr>
-        <tr>
-          <th scope="row">65–69</th>
-          <td><span class="rc-dot rc-fm"></span><span class="rc-sr">Eligible</span></td>
-          <td><span class="rc-dot rc-hm"></span><span class="rc-sr">Eligible</span></td>
-          <td><span class="rc-dot rc-10k"></span><span class="rc-sr">Eligible</span></td>
-        </tr>
-        <tr>
-          <th scope="row">70+</th>
-          <td><span class="rc-dot rc-fm"></span><span class="rc-sr">Eligible</span></td>
-          <td><span class="rc-dot rc-hm"></span><span class="rc-sr">Eligible</span></td>
-          <td><span class="rc-dot rc-10k"></span><span class="rc-sr">Eligible</span></td>
-        </tr>
-
-        </tbody>
-      </table>
+    <p class="pz-intro">Top 3 in every category, awarded separately for male and female runners. Total prize money across the Marathon, Half Marathon and 10K City Run: <strong>₹3,26,000</strong>.</p>
+    <div class="pz-grid" id="prize-details">
+      <div class="pz-card" style="--c:#7A6FD0">
+        <div class="pz-head"><span>42.195 KM</span><h3>Marathon</h3></div>
+        <table class="pz-table">
+          <thead><tr><th scope="col">Category</th><th scope="col">1st</th><th scope="col">2nd</th><th scope="col">3rd</th></tr></thead>
+          <tbody><tr class="pz-fast"><th scope="row">Fastest</th><td>₹12,000</td><td>₹10,000</td><td>₹7,500</td></tr><tr><th scope="row">18–29</th><td>₹5,000</td><td>₹4,000</td><td>₹3,000</td></tr><tr><th scope="row">30–44</th><td>₹5,000</td><td>₹4,000</td><td>₹3,000</td></tr><tr><th scope="row">45–59</th><td>₹5,000</td><td>₹4,000</td><td>₹3,000</td></tr><tr><th scope="row">60+</th><td>₹5,000</td><td>₹4,000</td><td>₹3,000</td></tr></tbody>
+        </table>
+        <div class="pz-total"><span>Prize money, each gender</span><b>₹77,500</b></div>
+        <div class="pz-total pz-total-all"><span>Total (male &amp; female)</span><b>₹1,55,000</b></div>
+      </div>
+      <div class="pz-card" style="--c:#DC1F76">
+        <div class="pz-head"><span>21.097 KM</span><h3>Half Marathon</h3></div>
+        <table class="pz-table">
+          <thead><tr><th scope="col">Category</th><th scope="col">1st</th><th scope="col">2nd</th><th scope="col">3rd</th></tr></thead>
+          <tbody><tr class="pz-fast"><th scope="row">Fastest</th><td>₹10,000</td><td>₹7,500</td><td>₹5,000</td></tr><tr><th scope="row">18–29</th><td>₹4,000</td><td>₹3,000</td><td>₹2,500</td></tr><tr><th scope="row">30–39</th><td>₹4,000</td><td>₹3,000</td><td>₹2,500</td></tr><tr><th scope="row">40–49</th><td>₹4,000</td><td>₹3,000</td><td>₹2,500</td></tr><tr><th scope="row">50–59</th><td>₹4,000</td><td>₹3,000</td><td>₹2,500</td></tr><tr><th scope="row">60+</th><td>₹4,000</td><td>₹3,000</td><td>₹2,500</td></tr></tbody>
+        </table>
+        <div class="pz-total"><span>Prize money, each gender</span><b>₹70,000</b></div>
+        <div class="pz-total pz-total-all"><span>Total (male &amp; female)</span><b>₹1,40,000</b></div>
+      </div>
+      <div class="pz-card" style="--c:#2E8B4E">
+        <div class="pz-head"><span>10 KM</span><h3>10K City Run</h3></div>
+        <table class="pz-table">
+          <thead><tr><th scope="col">Category</th><th scope="col">1st</th><th scope="col">2nd</th><th scope="col">3rd</th></tr></thead>
+          <tbody><tr class="pz-fast"><th scope="row">Open</th><td>₹7,500</td><td>₹5,000</td><td>₹3,000</td></tr><tr><th scope="row">12–17</th><td colspan="3" class="pz-gift">Prizes</td></tr><tr><th scope="row">18–29</th><td colspan="3" class="pz-gift">Prizes</td></tr><tr><th scope="row">30–39</th><td colspan="3" class="pz-gift">Prizes</td></tr><tr><th scope="row">40–49</th><td colspan="3" class="pz-gift">Prizes</td></tr><tr><th scope="row">50–59</th><td colspan="3" class="pz-gift">Prizes</td></tr><tr><th scope="row">60+</th><td colspan="3" class="pz-gift">Prizes</td></tr></tbody>
+        </table>
+        <div class="pz-total"><span>Prize money, each gender</span><b>₹15,500</b></div>
+        <div class="pz-total pz-total-all"><span>Total (male &amp; female)</span><b>₹31,000</b></div>
+      </div>
     </div>
-
+    <div class="pz-joy"><b>5K Joy Run &amp; Walk</b> &middot; All ages. Non-competitive, with no age categories or prizes.</div>
     <ul class="rc-rules">
       <li>Age is calculated as on race day, 29 November 2026.</li>
       <li>Male and female categories are awarded separately, top 3 in each category.</li>
-      <li>Open includes all eligible ages. Open podium finishers are not eligible for age-category awards.</li>
+      <li>Open and Fastest podium finishers are not eligible for age-category awards.</li>
+      <li>Minimum age: 18+ for the Marathon and Half Marathon, 12+ for the 10K City Run.</li>
     </ul>
   </div>
-
-  <div class="prize-note" id="prize-details">Prize Money Details will be updated soon.</div>
 </div>
 
 <!-- FOOTER -->
